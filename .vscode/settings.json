@@ -1,0 +1,5 @@
+{
+  "cSpell.words": ["typefully"],
+  // makes import autocomplete work as exepected in backend
+  "python.analysis.extraPaths": ["backend"]
+}

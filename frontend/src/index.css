@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* palette (copied from typefully.com) */
+:root {
+  --accentHsl: 205 92% 53%;
+
+  --c1Hsl: 0 0% 0%;
+  --c2Hsl: 207 20% 26%;
+  --c3Hsl: 207 14% 42%;
+  --c4Hsl: 207 12% 60%;
+  --c5Hsl: 205 10% 80%;
+  --c6Hsl: 207 8% 91%;
+  --c7Hsl: 204 8% 94%;
+
+  --bg0Hsl: 0 0% 100%;
+  --bg1Hsl: 240 2% 99%;
+  --bg2Hsl: 204 2% 97.5%;
+  --bg3Hsl: 204 2% 96%;
+  --bg4Hsl: 204 2% 94%;
+
+  /* Color vars */
+  --accent: hsl(var(--accentHsl));
+
+  --c1: hsl(var(--c1Hsl));
+  --c2: hsl(var(--c2Hsl));
+  --c3: hsl(var(--c3Hsl));
+  --c4: hsl(var(--c4Hsl));
+  --c5: hsl(var(--c5Hsl));
+  --c6: hsl(var(--c6Hsl));
+  --c7: hsl(var(--c7Hsl));
+
+  --bg0: hsl(var(--bg0Hsl));
+  --bg1: hsl(var(--bg1Hsl));
+  --bg2: hsl(var(--bg2Hsl));
+  --bg3: hsl(var(--bg3Hsl));
+  --bg4: hsl(var(--bg4Hsl));
+}

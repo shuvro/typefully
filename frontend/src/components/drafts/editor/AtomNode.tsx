@@ -76,33 +76,38 @@ const NodeView = (nodeViewProps: NodeViewProps) => {
       return data.draft as Draft;
     });
 
-    // Check if tweets array is empty
-    if (!updatedDraft.tweets || updatedDraft.tweets.length === 0) {
-      console.log('No tweets to process');
-      return; // Return early from the function
-    }
-    deleteNode(); // Delete the current node
-
-    updatedDraft.tweets.forEach((tweet) => {
-      editor
-        .chain()
-        .insertContentAt(getPos(), {
-          type: "atom",
+    updatedDraft?.tweets.forEach((tweet, index) => {
+      if (index === 0) {
+        editor.chain().clearContent().insertContent({
+          type: "paragraph",
           content: [
             {
-              type: "paragraph",
-              content: [
-                {
-                  type: "text",
-                  text: tweet,
-                },
-              ],
+              type: "text",
+              text: tweet,
             },
           ],
-        })
-        .run();
+        }).run();
+      } else {
+        editor
+          .chain()
+          .insertContent({
+            type: "atom",
+            content: [
+              {
+                type: "paragraph",
+                content: [
+                  {
+                    type: "text",
+                    text: tweet,
+                  },
+                ],
+              },
+            ],
+          })
+          .run();
+      }
     });
-  }, [deleteNode, editor, getPos, selectedDraftId]);
+  }, [editor, selectedDraftId]);
 
   return (
     <NodeViewWrapper>

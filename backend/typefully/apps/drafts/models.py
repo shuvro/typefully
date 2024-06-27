@@ -10,3 +10,4 @@ class Draft(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     content = models.JSONField(null=True, default=make_empty_editor_content)
     preview = models.CharField(max_length=256, default="")
+    tweets = models.JSONField(null=True, default=list)

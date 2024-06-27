@@ -6,4 +6,5 @@ export type Draft = {
   updated_at: string;
   content: JSONContent;
   preview: string;
+  tweets: string[];
 };
